@@ -1,0 +1,425 @@
+=== RUN   TestBasicPaxos
+TestBasicPaxos proposer num:1, acceptor num:3, learner num:2 begin
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  100 100}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 100
+TestBasicPaxos proposer num:1, acceptor num:3, learner num:2 end
+--- PASS: TestBasicPaxos (1.01s)
+=== RUN   TestSingleProposer
+TestSingleProposer proposer num:1, acceptor num:3, learner num:2 begin
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  100 100}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 100
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  200 200}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 200
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  300 300}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 300
+TestSingleProposer proposer num:1, acceptor num:3, learner num:2 end
+--- PASS: TestSingleProposer (3.02s)
+=== RUN   TestManyProposer
+TestManyProposer proposer num:3, acceptor num:3, learner num:2 begin
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  110 110}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 110
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.2,(1.1,110) ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.2,(1.1,110) ]
+[proposer:2] 1.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{1.2  110 120}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.2,(1.1,110) ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.2 ]
+[proposer:2] 1.2 reach consensuse Value: 110
+[proposer:3] phase 1, prepareMsg:{1.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.3,(1.2,110) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.3,(1.1,110) ]
+[proposer:3] 1.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{1.3  110 130}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.3,(1.2,110) ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.3 ]
+[proposer:3] 1.3 reach consensuse Value: 110
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  210 210}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 210
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.2,(1.1,210) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.2,(1.1,210) ]
+[proposer:2] 1.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{1.2  210 220}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.2,(1.1,210) ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.2 ]
+[proposer:2] 1.2 reach consensuse Value: 210
+[proposer:3] phase 1, prepareMsg:{1.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.3,(1.2,210) ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.3,(1.2,210) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.3,(1.2,210) ]
+[proposer:3] 1.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{1.3  210 230}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.3 ]
+[proposer:3] 1.3 reach consensuse Value: 210
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  310 310}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 310
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.2,(1.1,310) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.2,(1.1,310) ]
+[proposer:2] 1.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{1.2  310 320}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.2,(1.1,310) ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.2 ]
+[proposer:2] 1.2 reach consensuse Value: 310
+[proposer:3] phase 1, prepareMsg:{1.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.3,(1.2,310) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.3,(1.2,310) ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.3,(1.2,310) ]
+[proposer:3] 1.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{1.3  310 330}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.3 ]
+[proposer:3] 1.3 reach consensuse Value: 310
+TestManyProposer proposer num:3, acceptor num:3, learner num:2 end
+--- PASS: TestManyProposer (3.14s)
+=== RUN   TestManyProposerUnreliable
+TestManyProposerUnreliable proposer num:3, acceptor num:3, learner num:2 begin
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  110 110}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.1 ]
+[proposer:1] 1.1 reach consensuse Value: 110
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.2,(1.1,110) ]
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.2 ]
+[proposer:2] 1.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{1.2  110 120}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.2 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.2 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.2 ]
+[proposer:2] 1.2 reach consensuse Value: 110
+[proposer:3] phase 1, prepareMsg:{1.3}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.3,(1.2,110) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.3,(1.1,110) ]
+[proposer:3] 1.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{1.3  110 130}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4101 SendAccept:1.3 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:1.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:1.3 ]
+[proposer:3] 1.3 reach consensuse Value: 110
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:1.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:1.1 ]
+[proposer:1] 1.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{1.1  210 210}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:1.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:1.1 ]
+[proposer:1] 1.1 not reach consensuse
+[proposer:1] phase 1, prepareMsg:{2.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:2.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:2.1,(1.1,210) ]
+[proposer:1] 2.1 小于当前accepter的N
+[proposer:1] phase 1, prepareMsg:{3.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:3.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:3.1,(1.1,210) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:3.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:3.1 ]
+[proposer:1] 3.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{3.1  210 210}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecievePrepare:3.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:3.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:3.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:3.1 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:3.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:3.1 ]
+[proposer:1] 3.1 reach consensuse Value: 210
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:1.2 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[proposer:2] 1.2 小于当前accepter的N
+[proposer:2] phase 1, prepareMsg:{2.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:2.2 ]
+[proposer:2] 2.2 小于当前accepter的N
+[proposer:2] phase 1, prepareMsg:{3.2}
+[acceptor 127.0.0.1:4101 RecievePrepare:3.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:3.2 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:3.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:3.2,(3.1,210) ]
+[proposer:2] 3.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{3.2  210 220}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4102 RecieveAccept:3.2 ]
+[acceptor 127.0.0.1:4102 SendAccept:3.2 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:3.2 ]
+[acceptor 127.0.0.1:4101 SendAccept:3.2 ]
+[proposer:2] 3.2 reach consensuse Value: 210
+[proposer:3] phase 1, prepareMsg:{1.3}
+[proposer:3] 1.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{2.3}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:2.3 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:2.3 ]
+[proposer:3] 2.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{3.3}
+[acceptor 127.0.0.1:4101 RecievePrepare:3.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:3.3,(3.2,210) ]
+[proposer:3] 3.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{4.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:4.3 ]
+[acceptor 127.0.0.1:4103 SendPromise:4.3,(3.1,210) ]
+[acceptor 127.0.0.1:4102 RecievePrepare:4.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:4.3,(3.2,210) ]
+[proposer:3] 4.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{4.3  210 230}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:4.3 ]
+[acceptor 127.0.0.1:4103 SendAccept:4.3 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:4.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:4.3 ]
+[proposer:3] 4.3 reach consensuse Value: 210
+[proposer:1] phase 1, prepareMsg:{1.1}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:1.1 ]
+[proposer:1] 1.1 小于当前accepter的N
+[proposer:1] phase 1, prepareMsg:{2.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:2.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:2.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:2.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:2.1 ]
+[proposer:1] 2.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{2.1  310 310}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:2.1 ]
+[proposer:1] 2.1 not reach consensuse
+[proposer:1] phase 1, prepareMsg:{3.1}
+[proposer:1] 3.1 小于当前accepter的N
+[proposer:1] phase 1, prepareMsg:{4.1}
+[acceptor 127.0.0.1:4103 RecievePrepare:4.1 ]
+[acceptor 127.0.0.1:4103 SendPromise:4.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:2.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:2.1 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:3.1 ]
+[acceptor 127.0.0.1:4101 SendPromise:3.1 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:4.1 ]
+[acceptor 127.0.0.1:4102 SendPromise:4.1,(2.1,310) ]
+[proposer:1] 4.1 有可能会达到共识
+[proposer:1] phase 2, acceptMsg:{4.1  310 310}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:4.1 ]
+[acceptor 127.0.0.1:4103 SendAccept:4.1 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:4.1 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:4.1 ]
+[acceptor 127.0.0.1:4102 SendAccept:4.1 ]
+[proposer:1] 4.1 reach consensuse Value: 310
+[proposer:2] phase 1, prepareMsg:{1.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:1.2 ]
+[proposer:2] 1.2 小于当前accepter的N
+[proposer:2] phase 1, prepareMsg:{2.2}
+[acceptor 127.0.0.1:4103 RecievePrepare:2.2 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:2.2 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:2.2 ]
+[proposer:2] 2.2 小于当前accepter的N
+[proposer:2] phase 1, prepareMsg:{3.2}
+[acceptor 127.0.0.1:4102 RecievePrepare:3.2 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:3.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:3.2 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:1.2 ]
+[proposer:2] 3.2 小于当前accepter的N
+[proposer:2] phase 1, prepareMsg:{4.2}
+[acceptor 127.0.0.1:4103 RecievePrepare:4.2 ]
+[acceptor 127.0.0.1:4103 SendPromise:4.2,(4.1,310) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:4.2 ]
+[acceptor 127.0.0.1:4101 SendPromise:4.2 ]
+[acceptor 127.0.0.1:4102 RecievePrepare:4.2 ]
+[acceptor 127.0.0.1:4102 SendPromise:4.2,(4.1,310) ]
+[proposer:2] 4.2 有可能会达到共识
+[proposer:2] phase 2, acceptMsg:{4.2  310 320}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4103 RecieveAccept:4.2 ]
+[acceptor 127.0.0.1:4103 SendAccept:4.2 ]
+[acceptor 127.0.0.1:4101 RecieveAccept:4.2 ]
+[acceptor 127.0.0.1:4101 SendAccept:4.2 ]
+[proposer:2] 4.2 reach consensuse Value: 310
+[proposer:3] phase 1, prepareMsg:{1.3}
+[acceptor 127.0.0.1:4101 RecievePrepare:1.3 ]
+[proposer:3] 1.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{2.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:1.3 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:2.3 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:2.3 ]
+[proposer:3] 2.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{3.3}
+[acceptor 127.0.0.1:4103 RecievePrepare:3.3 ]
+[acceptor 127.0.0.1:4101 RecievePrepare:3.3 ]
+[proposer:3] 3.3 小于当前accepter的N
+[proposer:3] phase 1, prepareMsg:{4.3}
+[acceptor 127.0.0.1:4102 RecievePrepare:2.3 ]
+[acceptor 127.0.0.1:4103 RecievePrepare:4.3 ]
+[acceptor 127.0.0.1:4103 SendPromise:4.3,(4.2,310) ]
+[acceptor 127.0.0.1:4101 RecievePrepare:4.3 ]
+[acceptor 127.0.0.1:4101 SendPromise:4.3,(4.2,310) ]
+[acceptor 127.0.0.1:4102 RecievePrepare:4.3 ]
+[acceptor 127.0.0.1:4102 SendPromise:4.3,(4.1,310) ]
+[proposer:3] 4.3 有可能会达到共识
+[proposer:3] phase 2, acceptMsg:{4.3  310 330}(最后一个值是proposer计划提案值)
+[acceptor 127.0.0.1:4101 RecieveAccept:4.3 ]
+[acceptor 127.0.0.1:4101 SendAccept:4.3 ]
+[acceptor 127.0.0.1:4103 RecieveAccept:4.3 ]
+[acceptor 127.0.0.1:4103 SendAccept:4.3 ]
+[acceptor 127.0.0.1:4102 RecieveAccept:4.3 ]
+[acceptor 127.0.0.1:4102 SendAccept:4.3 ]
+[proposer:3] 4.3 reach consensuse Value: 310
+TestManyProposerUnreliable proposer num:3, acceptor num:3, learner num:2 end
+--- PASS: TestManyProposerUnreliable (3.39s)
+PASS
+ok  	paxos	10.934s
